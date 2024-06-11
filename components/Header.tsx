@@ -1,8 +1,10 @@
+"use server";
+
 import { Logo } from "./logo"
 import { TrialExpired } from "./trial-expired"
 import {AuthButton} from "./AuthButton"
 
-export function Header() {
+export default async function Header() {
   return (
     <div className="w-full">
       {/* <TrialExpired /> */}
