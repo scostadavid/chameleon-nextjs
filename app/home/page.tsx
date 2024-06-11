@@ -97,7 +97,7 @@ export default async function ProtectedPage() {
                       <Link href={url} target="_blank" rel="noreferrer noopener">{url}</Link>
                     </td>
                     <td>
-                      <Link href={defaultUrl + '/' + hash} target="_blank" rel="noreferrer noopener">{hash}</Link>
+                      <Link href={'/' + hash} target="_blank" rel="noreferrer noopener">{hash}</Link>
                     </td>
                     <td>
                       <form action={deleteUrl}>
