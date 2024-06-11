@@ -3,7 +3,24 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Suspense } from "react";
 import { AddUrlForm } from "@/components/add-url-form";
-import Header from "@/components/header";
+
+import { Logo } from "@/components/logo"
+import {AuthButton} from "@/components/AuthButton"
+
+async function Header() {
+  return (
+    <div className="w-full">
+      {/* <TrialExpired /> */}
+      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
+        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+          <Logo />
+          <AuthButton />
+        </div>
+      </nav>
+    </div>
+  )
+}
+
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
