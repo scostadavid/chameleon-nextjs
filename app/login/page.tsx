@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "@/components/submit-button";
+import { Logo } from "@/components/logo";
 
 export default function Login({
   searchParams,
@@ -57,78 +58,78 @@ export default function Login({
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="max-w-xl px-8 justify-center h-screen items-center justify-center p-8">
-        <Link
-          href="/"
-          className="btn mb-8"
+    <div className="relative flex flex-col justify-center h-screen overflow-hidden">
+      <Link
+        href="/"
+        className="btn mb-8"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>{" "}
-          Back
-        </Link>
+          <polyline points="15 18 9 12 15 6" />
+        </svg>{" "}
+        Back
+      </Link>
 
-        <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
-          <label className="text-md" htmlFor="email">
-            Email
-          </label>
-          <input
-            className="rounded-md px-4 py-2 bg-inherit border mb-6"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
-          <label className="text-md" htmlFor="username">
-            Username
-          </label>
-          <input
-            className="rounded-md px-4 py-2 bg-inherit border mb-6"
-            name="username"
-            placeholder="johndoe"
-            required
-          />
-          <label className="text-md" htmlFor="password">
-            Password
-          </label>
-          <input
-            className="rounded-md px-4 py-2 bg-inherit border mb-6"
-            type="password"
-            name="password"
-            placeholder="••••••••"
-            required
-          />
+      <div className="w-full p-6 m-auto rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-lg">
+        <Logo />
+        <form className="space-y-4">
+          <div>
+              <label className="label">
+                  <span className="text-base label-text">Email</span>
+              </label>
+              <input type="text"  name="email"
+          placeholder="you@example.com"
+          required className="w-full input input-bordered" />
+          </div>
+          <div>
+              <label className="label">
+                  <span className="text-base label-text">Username</span>
+              </label>
+              <input type="text" name="username"
+          placeholder="johndoe"
+          required className="w-full input input-bordered" />
+          </div>
+          <div>
+              <label className="label">
+                  <span className="text-base label-text">Password</span>
+              </label>
+              <input type="password"             type="password"
+          name="password"
+          placeholder="••••••••"
+          required className="w-full input input-bordered" />
+          </div>
+          {/* <a href="#" className="text-xs text-gray-600 hover:underline hover:text-blue-600">Forget Password?</a> */}
+
           <SubmitButton
             formAction={signIn}
-            className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
+            className="btn-primary btn btn-block"
             pendingText="Signing In..."
           >
-            Sign In
+            Login
           </SubmitButton>
           <SubmitButton
             formAction={signUp}
-            className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
+            className="btn-neutral btn btn-block"
             pendingText="Signing Up..."
           >
             Sign Up
           </SubmitButton>
-          {searchParams?.message && (
+        </form>
+        {searchParams?.message && (
             <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
               {searchParams.message}
             </p>
           )}
-        </form>
       </div>
     </div>
   );

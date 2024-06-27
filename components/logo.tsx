@@ -1,5 +1,5 @@
 export function Logo() {
   return (
-    <h1 className="text-xl font-bold">🌐 Chameleon</h1>
+    <h1 className="text-md font-bold">🌐 Chameleon</h1>
   );
 }
