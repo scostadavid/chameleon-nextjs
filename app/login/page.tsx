@@ -103,7 +103,7 @@ export default function Login({
               <label className="label">
                   <span className="text-base label-text">Password</span>
               </label>
-              <input type="password"             type="password"
+              <input type="password"
           name="password"
           placeholder="••••••••"
           required className="w-full input input-bordered" />
