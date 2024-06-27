@@ -91,7 +91,7 @@ export default async function ProtectedPage() {
         <div className="drawer-content flex flex-col">
     <div className="w-full navbar bg-base-300 lg:hidden">
         <div className="flex-none lg:hidden">
-            <label for="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
+            <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
                 <svg xmlns="http:www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -181,7 +181,7 @@ export default async function ProtectedPage() {
 </div>
 
 <div className="drawer-side">
-    <label for="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
+    <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
     <div className="menu p-4 w-60 min-h-full bg-base-200">
         <aside className="">
             <div className="m-4">
